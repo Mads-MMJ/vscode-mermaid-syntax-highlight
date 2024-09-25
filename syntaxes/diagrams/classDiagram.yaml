@@ -256,4 +256,18 @@
           name: storage.type.mermaid
         '5':
           name: punctuation.definition.typeparameters.end.mermaid
+    - comment: 'note for (class name)'
+      match: !regex |-
+        ^\s*(note) # note
+        (?:\s+(for)\s+([\w-]+)) # for class name
+        \s*("[^\n"]+") # note text
+      captures:
+        '1':
+          name: keyword.control.mermaid
+        '2':
+          name: keyword.control.mermaid
+        '3':
+          name: variable
+        '4':
+          name: string
   end: (^|\G)(?=\s*[`:~]{3,}\s*$)
